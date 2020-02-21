@@ -1,14 +1,48 @@
 import React from 'react';
 import './App.css';
 
+/*
 function Helloworld(props){
-  console.log(props) //props: datos que un componente recibe a traves de un objeto
+  console.log(props) //props: datos que un componente recibe a traves de un objeto (props, propiedades)
   return(
     <div id="hello"> 
     <h3>{props.subtitle}</h3>
     {props.mytext} 
     </div>
   )
+}
+*/
+
+class Helloworld extends React.Component {
+
+  state ={
+    show: true
+  }
+
+toggleShow = () => {
+  this.setState({show: !this.state.show}) 
+  /*console.log(this.state.show)
+    if(this.state.show){
+    this.setState({show: false}) 
+  }
+  else
+    this.setState({show: true})*/    
+}
+
+  render(){
+    if (this.state.show){
+      return(
+        <div id="hello"> 
+        <h3>{this.props.subtitle}</h3>
+        {this.props.mytext} 
+        <button onClick={ this.toggleShow }> Cambiar Estado</button>
+        </div>
+      )
+    }
+    else{
+    return <h1>"No hay elementos" <button onClick = {this.toggleShow}> Cambiar Estado</button></h1>
+    }
+  }
 }
 
 /*
