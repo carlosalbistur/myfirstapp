@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+function Helloworld(props){
+  console.log(props)
+  return(
+    <div id="hello"> 
+    <h3>{props.subtitle}</h3>
+    {props.mytext} 
+    </div>
+  )
+}
+
+/*
+const App = () => <div>This is my component: <Helloworld/> <Helloworld/> <Helloworld/> </div>
+
+class App extends React.Component{
+  render(){
+    return <div>This is my component: <Helloworld/> <Helloworld/> <Helloworld/></div>
+  }
+}
+*/
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>This is my component: 
+      <Helloworld mytext = "Hello Fazt"/> 
+      <Helloworld mytext = "Hola Mundo"/> 
+      <Helloworld mytext = "Hola"/></div>
   );
 }
 
